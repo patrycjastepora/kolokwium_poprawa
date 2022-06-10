@@ -22,7 +22,7 @@ public class ATMachine {
         return new ATMachine(bank, currency);
     }
 
-    private ATMachine(Bank bank, Currency currency) {
+    ATMachine(Bank bank, Currency currency) {
         this.bank = requireNonNull(bank);
         this.deposit = MoneyDeposit.of(requireNonNull(currency), List.of());
     }

@@ -30,6 +30,10 @@ public class MoneyDeposit {
                                       pack2) -> BanknotesPack.create(pack1.getCount() + pack2.getCount(), pack1.getDenomination())));
     }
 
+    public static MoneyDeposit create(Currency currency, List<BanknotesPack> banknotesPacks) {
+            return new MoneyDeposit(requireNonNull(currency.getCurrencyCode()), requireNonNull(banknotesPacks));
+    }
+
     public Currency getCurrency() {
         return Currency.getInstance(currencyCode);
     }
